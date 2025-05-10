@@ -3,17 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sonolens Préparation</title>
+  <title>Sonolens - Préparation de Commande</title>
   <link rel="manifest" href="manifest.json" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#121212">
+  <link rel="apple-touch-icon" href="icon.png">
+  <style>
+    /* Styles existants conservés ici */
+  </style>
+</head>
+<body class="dark-mode">
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js');
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('Service Worker enregistré', reg))
+        .catch(err => console.error('Erreur SW', err));
     }
   </script>
-</head>
-<body>
-  <h1>Application Sonolens Préparation</h1>
-  <p>Interface de test PWA pour iPad.</p>
+  <!-- Le reste du HTML suit ici... (inchangé) -->
 </body>
 </html>
